@@ -2,15 +2,15 @@
   "name": "MR - Versículo Diario",
   "short_name": "MR Versículo",
   "description": "Un versículo para acompañar cada día.",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#f7f7fb",
   "theme_color": "#262d48",
   "icons": [
     {
-      "src": "assets/icon-192.png",
-      "sizes": "192x192",
+      "src": "/assets/apple-touch-icon.png?v=mr-final-2",
+      "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
     }
