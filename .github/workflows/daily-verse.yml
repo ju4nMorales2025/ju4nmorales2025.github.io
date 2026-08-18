@@ -1,6 +1,11 @@
 name: Enviar versiculo diario
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/daily-verse.yml"
+      - "scripts/send_daily_push.py"
   schedule:
     # 10:00 UTC = 07:00 en Argentina (UTC-3)
     - cron: "0 10 * * *"
