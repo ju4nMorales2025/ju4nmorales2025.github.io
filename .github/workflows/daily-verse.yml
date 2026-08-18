@@ -1,0 +1,19 @@
+name: Enviar versiculo diario
+
+on:
+  schedule:
+    # 10:00 UTC = 07:00 en Argentina (UTC-3)
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Enviar push diario
+        env:
+          ONESIGNAL_APP_ID: ${{ secrets.ONESIGNAL_APP_ID }}
+          ONESIGNAL_API_KEY: ${{ secrets.ONESIGNAL_API_KEY }}
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: python scripts/send_daily_push.py
