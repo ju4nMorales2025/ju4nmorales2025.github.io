@@ -254,9 +254,16 @@ document.querySelectorAll(".nav-btn").forEach(btn => {
 async function start() {
   applyTheme();
   $("versionSelect").value = preference();
-  const res = await fetch("data/verses.json", { cache: "no-store" });
-  state.verses = await res.json();
-  render();
+  try {
+    const res = await fetch("/data/verses.json", { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    state.verses = await res.json();
+    render();
+  } catch (err) {
+    console.error("No se pudieron cargar los versículos:", err);
+    $("verseText").textContent = "No se pudo cargar el versículo. Volvé a abrir la app en unos segundos.";
+    $("verseRef").textContent = "";
+  }
   updateInstallUI();
   await initOneSignal();
 }
