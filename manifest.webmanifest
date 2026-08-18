@@ -1,16 +1,17 @@
 {
+  "id": "/",
   "name": "MR - Versículo Diario",
-  "short_name": "MR Versículo",
+  "short_name": "Versículo",
   "description": "Un versículo para acompañar cada día.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#f7f7fb",
+  "background_color": "#101115",
   "theme_color": "#262d48",
   "icons": [
     {
-      "src": "/assets/mr-logo-app-180.png?v=mr-final-3",
-      "sizes": "180x180",
+      "src": "/assets/mr-renuevo-192.png",
+      "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     }
