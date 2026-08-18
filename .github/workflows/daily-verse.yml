@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Enviar push diario
         env:
-          ONESIGNAL_APP_ID: ${{ secrets.ONESIGNAL_APP_ID }}
+          ONESIGNAL_APP_ID: "dd57e4b2-b853-4b1b-8edd-054c47f3599c"
           ONESIGNAL_API_KEY: ${{ secrets.ONESIGNAL_API_KEY }}
-          SITE_URL: ${{ vars.SITE_URL }}
+          SITE_URL: "https://ju4nmorales2025.github.io/renuevo/"
         run: python scripts/send_daily_push.py
