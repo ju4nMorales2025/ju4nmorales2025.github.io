@@ -31,10 +31,19 @@ key = "rvr1960" if version == "RVR1960" else "pdt"
 exact = (v.get(key) or "").strip()
 text = exact or v["preview"]
 
+# En lugar de depender del segmento predefinido "Subscribed Users",
+# apuntamos a quienes ya abrieron la app al menos una vez. OneSignal solo
+# entrega push a las suscripciones que realmente tienen permiso activo.
 body = {
     "app_id": APP_ID,
     "target_channel": "push",
-    "included_segments": ["Subscribed Users"],
+    "filters": [
+        {
+            "field": "session_count",
+            "relation": ">",
+            "value": "0"
+        }
+    ],
     "headings": {
         "en": v["reference"],
         "es": v["reference"]
