@@ -3,7 +3,7 @@
   "name": "MR - Versículo Diario",
   "short_name": "Versículo",
   "description": "Un versículo para acompañar cada día.",
-  "start_url": "/",
+  "start_url": "/?app=mr-renuevo-v5",
   "scope": "/",
   "display": "standalone",
   "background_color": "#101115",
